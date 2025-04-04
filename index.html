@@ -20,101 +20,152 @@
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+  @keyframes flykite {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-200px) rotate(10deg) scale(0.7); opacity: 0; }
+  }
+
+  .animate-flykite {
+    animation: none;
+  }
+
+  .kite-out {
+    animation: flykite 1.2s forwards;
+  }
+</style>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
 <body class="bg-dark text-white font-sans scroll-smooth">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 w-full bg-dark shadow z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-primary">Emmanuel Kipyegon</h1>
-      <nav class="space-x-4">
-        <a href="#about" class="hover:text-primary transition">About</a>
-        <a href="#projects" class="hover:text-primary transition">Projects</a>
-        <a href="#contact" class="hover:text-primary transition">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- NAVBAR -->
+<header class="fixed top-0 w-full bg-dark shadow z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-xl md:text-2xl font-bold text-primary">Emmanuel Kipyegon</h1>
+    <button class="md:hidden text-white" id="menuBtn">☰</button>
+    <nav class="space-x-4 hidden md:flex" id="navMenu">
+      <a href="#about" class="hover:text-primary transition">About</a>
+      <a href="#projects" class="hover:text-primary transition">Projects</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+    </nav>
+  </div>
+  <div class="md:hidden px-4 pb-4 hidden flex-col space-y-2" id="mobileMenu">
+    <a href="#about" class="block hover:text-primary transition">About</a>
+    <a href="#projects" class="block hover:text-primary transition">Projects</a>
+    <a href="#contact" class="block hover:text-primary transition">Contact</a>
+  </div>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-primary">Emmanuel Kipyegon</span></h2>
-    <p class="text-xl mb-6 max-w-xl">I’m a developer who turns ideas into beautiful, functional digital experiences.</p>
-    <a href="#projects" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-teal-500 transition">View My Work</a>
-  </section>
+<!-- HERO SECTION -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24">
+  <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-primary">Emmanuel Kipyegon</span></h2>
+  <p class="text-xl mb-6 max-w-xl">I’m a developer who turns ideas into beautiful, functional digital experiences.</p>
+  <a href="#projects" class="bg-primary px-6 py-2 rounded-full font-semibold hover:bg-teal-500 transition">View My Work</a>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-20 bg-gray-900">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-4">About Me</h3>
-      <p class="text-gray-300 max-w-3xl mx-auto">I'm a passionate full-stack developer, data analyst, and AI enthusiast. I love building tools that help people understand their data better, manage their systems efficiently, and make smart decisions through clean, powerful interfaces.</p>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-900">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-4">About Me</h3>
+    <p class="text-gray-300 max-w-3xl mx-auto">I'm a passionate full-stack developer, data analyst, and AI enthusiast. I love building tools that help people understand their data better, manage their systems efficiently, and make smart decisions through clean, powerful interfaces.</p>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-20">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Project 1 -->
-        <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform">
-          <img src="https://via.placeholder.com/400x250" alt="Analytics Website" class="w-full">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">Analytics Website</h4>
-            <p class="text-gray-400 mb-3">A platform for uploading datasets, performing automated EDA, and generating smart reports with machine learning.</p>
-            <a href="https://github.com/kipyegonemmanuel/analytics-website" class="text-primary hover:underline" target="_blank">View on GitHub →</a>
-          </div>
+<!-- PROJECTS -->
+<section id="projects" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform">
+        <img src="https://via.placeholder.com/400x250" alt="Analytics Website" class="w-full">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold mb-2">Analytics Website</h4>
+          <p class="text-gray-400 mb-3">A platform for uploading datasets, performing automated EDA, and generating smart reports with machine learning.</p>
+          <a href="https://www.google.com/imgres?q=system%20management&imgurl=https%3A%2F%2Fi0.wp.com%2Ftheecmconsultant.com%2Fwp-content%2Fuploads%2F2025%2F01%2Finformation-management-system.png%3Ffit%3D1024%252C768%26ssl%3D1&imgrefurl=https%3A%2F%2Ftheecmconsultant.com%2Finformation-management-system%2F&docid=27msHyltnaPCaM&tbnid=H9CfqrA7lSOkYM&vet=12ahUKEwjCibHvob6MAxUCSvEDHSXJOMQQM3oECDkQAA..i&w=1024&h=768&hcb=2&ved=2ahUKEwjCibHvob6MAxUCSvEDHSXJOMQQM3oECDkQAA" class="text-primary hover:underline" target="_blank">View on GitHub →</a>
         </div>
-
-        <!-- Project 2 -->
-        <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform">
-          <img src="https://via.placeholder.com/400x250" alt="Sales System" class="w-full">
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">Sales Management System</h4>
-            <p class="text-gray-400 mb-3">A desktop-based platform for managing sales, tracking inventory, and analyzing profits with real-time charts.</p>
-            <a href="https://github.com/kipyegonemmanuel/sales-management-system" class="text-primary hover:underline" target="_blank">View on GitHub →</a>
-          </div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform">
+        <img src="data:image/jpeg;base64,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" alt="Sales System" class="w-full">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold mb-2">Sales Management System</h4>
+          <p class="text-gray-400 mb-3">A desktop-based platform for managing sales, tracking inventory, and analyzing profits with real-time charts.</p>
+          <a href="https://github.com/kipyegonemmanuel/sales-management-system" class="text-primary hover:underline" target="_blank">View on GitHub →</a>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- RESUME -->
-  <section class="py-20 bg-gray-900 text-center">
-    <h3 class="text-3xl font-bold mb-6">Want My Resume?</h3>
-    <a href="resume.pdf" download class="bg-primary px-6 py-3 rounded-full font-semibold hover:bg-teal-500 transition">Download Resume</a>
-  </section>
+<!-- RESUME -->
+<section class="py-20 bg-gray-900 text-center">
+  <h3 class="text-3xl font-bold mb-6">Want My Resume?</h3>
+  <a href="resume.pdf" download class="bg-primary px-6 py-3 rounded-full font-semibold hover:bg-teal-500 transition">Download Resume</a>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-20">
-    <div class="max-w-xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-4">Get In Touch</h3>
-      <p class="text-gray-400 mb-8">Whether you want to collaborate, hire me, or just say hi — I’d love to hear from you!</p>
-      <form id="contactForm" class="space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none">
-        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none">
-        <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none"></textarea>
-        <button type="submit" class="bg-primary px-6 py-3 rounded-full font-semibold hover:bg-teal-500 transition">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="py-20">
+  <div class="max-w-xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-4">Get In Touch</h3>
+    <p class="text-gray-400 mb-8">Whether you want to collaborate, hire me, or just say hi — I’d love to hear from you!</p>
+    <form id="contactForm" class="space-y-4">
+      <input type="text" placeholder="Your Name" id="name" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none" required>
+      <input type="email" placeholder="Your Email" id="email" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none" required>
+      <textarea rows="5" placeholder="Your Message" id="message" class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none" required></textarea>
+      <button type="submit" class="bg-primary px-6 py-3 rounded-full font-semibold hover:bg-teal-500 transition">Send Message</button>
+    </form>
+    <div id="messagesContainer" class="mt-8 space-y-4"></div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="text-center py-6 bg-dark text-gray-400">
-    © 2025 Emmanuel Kipyegon | 📞 0791318813 | Lets Connect.
-  </footer>
+<!-- FOOTER -->
+<footer class="text-center py-6 bg-dark text-gray-400">
+  © 2025 Emmanuel Kipyegon | 📞 0791318813 | Built with 💙 and Tailwind.
+</footer>
 
-  <!-- JS -->
-  <script>
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Thanks for your message! 🚀');
-      form.reset();
+<!-- JS -->
+<script>
+  const form = document.getElementById('contactForm');
+  const navMenu = document.getElementById('navMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) return;
+
+    showFloatingPopup(name, message);
+    form.reset();
+  });
+
+  function showFloatingPopup(name, message) {
+    const popup = document.createElement('div');
+    popup.className = 'fixed bottom-10 right-5 bg-primary text-white px-6 py-4 rounded-xl shadow-xl animate-flykite z-50';
+    popup.innerHTML = `
+      <div class="font-semibold mb-1">Message from ${name}</div>
+      <div class="mb-3">${message}</div>
+      <button onclick="this.parentElement.classList.add('kite-out')" class="bg-white text-primary px-4 py-1 rounded hover:bg-gray-200 transition">OK</button>
+    `;
+    document.body.appendChild(popup);
+
+    // Auto remove after animation
+    popup.addEventListener('animationend', () => {
+      if (popup.classList.contains('kite-out')) {
+        popup.remove();
+      }
     });
-  </script>
+  }
+</script>
+
 
 </body>
 </html>
